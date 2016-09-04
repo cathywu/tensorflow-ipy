@@ -29,6 +29,10 @@ class init {
                 source => '/usr/share/autojump/autojump.sh',
                 require => Package['autojump']
             }
+            package { 'python-tk':
+                ensure => present,
+                require => Exec['apt-update'];
+            }
         }
     }
 }
